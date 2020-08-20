@@ -10,34 +10,33 @@ namespace Giraffe
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter a number: ");
-            double num1 = Convert.ToDouble(Console.ReadLine());
+            string secretWord = "giraffe";
+            string guess = "";
+            int guessCount = 0;
+            int guessLimit = 3;
+            bool outOfGuesses = false;
 
-            Console.Write("Enter desired operation (+,-,#,/): ");
-            string op = Console.ReadLine();
+            while (guess != secretWord && !outOfGuesses)
+            {
+                if (guessCount < guessLimit)
+                {
+                    Console.Write("Enter guess: ");
+                    guess = Console.ReadLine();
+                    guessCount++;
+                }
+                else
+                {
+                    outOfGuesses = true;
+                }
+            }
 
-            Console.Write("Enter another number: ");
-            double num2 = Convert.ToDouble(Console.ReadLine());
-
-            if (op == "+")
+            if (outOfGuesses)
             {
-                Console.WriteLine(num1 + num2);
-            }
-            else if (op == "-")
-            {
-                Console.WriteLine(num1 - num2);
-            }
-            else if (op == "/")
-            {
-                Console.WriteLine(num1 / num2);
-            }
-            else if (op == "*")
-            {
-                Console.WriteLine(num1 * num2);
+                Console.Write("Oh no, you ran out of guesses!");
             }
             else
             {
-                Console.WriteLine("Invalid operator");
+                Console.Write("You guessed right!");
             }
 
             Console.ReadLine();
