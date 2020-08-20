@@ -10,13 +10,17 @@ namespace Giraffe
     {
         static void Main(string[] args)
         {
-            int[,] numberGrid = {
-               { 1, 2 },
-               { 3, 4 },
-               { 5, 6 }
-            };
+            Book book1 = new Book();
+            book1.title = "Bleak House";
+            book1.author = "Charles Dickens";
+            book1.pages = 850;
 
-            Console.WriteLine(numberGrid[0, 0]);
+            Book book2 = new Book();
+            book2.title = "Martin Eden";
+            book2.author = "Jack London";
+            book2.pages = 150;
+
+            Console.WriteLine(book1.title);
 
             Console.ReadLine();
         }
