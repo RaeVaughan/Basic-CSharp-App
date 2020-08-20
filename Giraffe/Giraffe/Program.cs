@@ -16,7 +16,7 @@ namespace Giraffe
             int guessLimit = 3;
             bool outOfGuesses = false;
 
-            while (guess != secretWord && !outOfGuesses)
+            do
             {
                 if (guessCount < guessLimit)
                 {
@@ -29,6 +29,7 @@ namespace Giraffe
                     outOfGuesses = true;
                 }
             }
+            while (guess != secretWord && !outOfGuesses);
 
             if (outOfGuesses)
             {
